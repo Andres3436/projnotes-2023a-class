@@ -1,2 +1,14 @@
 # projnotes-2023a-class
-Proyecto de clase de la materia de Desarrollo Web en Pila completa ll, hecho con ES6+
+Class project from the FullStack Web Development
+Subject.
+
+## About..
+**Author:** [Andres Rodriguez]()
+
+---
+
+## Project Stack
+This Project will be developed using ECMAScript 6 (ES6) and run on a Node.js runtime environmrnt coded in ES6, as runtime enviroment. MongoDB will be utilized for database management, and Handlebars will be employed as the template engine.
+
+## Project Notes
+1. Project Creation
