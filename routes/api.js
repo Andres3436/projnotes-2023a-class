@@ -4,7 +4,8 @@ var express = require('express');
 var router = express.Router();
 
 // Creating the router
-router.get('/author', function(req, res)
+router.get('/author', function(req, res){
+
  res.json({
     "name":"Jesus",
     "lastname": "Rodriguez",
