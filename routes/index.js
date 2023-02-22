@@ -9,4 +9,17 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'DWPCII.2023A', icon });
 });
 
+router.get('/author', function(req, res){
+
+  let author = { 
+  "name":"Jesus Andres",
+  "lastname": "Rodriguez Gaspar",
+  "twitter": "@jesusomg",
+  "job": "ITGAM",
+};
+
+res.render('author', author);
+
+});
+
 module.exports = router;
