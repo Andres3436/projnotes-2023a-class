@@ -19,12 +19,19 @@ var app = express();
 // view engine setup
 // We are delcaring the localization of the views
 app.set('views', path.join(__dirname, 'views'));
+// Setting up
 app.set('view engine', 'hbs');
 
+// Registering middlewares
+// Log all received request
 app.use(logger('dev'));
+// Parse request data into json
 app.use(express.json());
+// Decode the url info
 app.use(express.urlencoded({ extended: false }));
+// Parse client cookies into json
 app.use(cookieParser());
+// Set up static file server
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Registering routes
