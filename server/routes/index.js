@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.get('/author', function(req, res){
 
   let author = { 
-  "name":"Jesus Andres",
+  "name":"🙄Andres",
   "lastname": "Rodriguez Gaspar",
   "twitter": "@jesusomg",
   "job": "ITGAM",
