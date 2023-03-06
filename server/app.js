@@ -1,20 +1,20 @@
 // Helps to handle http errors
-var createError = require('http-errors');
+const createError = require('http-errors');
 // Import the Express Library
-var express = require('express');
+const express = require('express');
 // Is a Core-Node library to manage system paths
-var path = require('path');
+const path = require('path');
 // Helps to parse client cookies
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 // Library to log http communication
-var logger = require('morgan');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const apiRouter = require('./routes/api');
 
 // We are creating the express instance
-var app = express();
+const app = express();
 
 // view engine setup
 // We are delcaring the localization of the views

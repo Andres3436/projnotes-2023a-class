@@ -1,7 +1,7 @@
 // Importting Express library
-var express = require('express');
+const express = require('express');
 // Creating a Router Instace
-var router = express.Router();
+const router = express.Router();
 
 // Creating the router
 router.get('/author', function(req, res){
