@@ -1,4 +1,4 @@
-# Repository Creation
+# Project Creation
 
 ## Introduction
 In this part of the project we created the
