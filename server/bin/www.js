@@ -3,21 +3,22 @@
 /**
  * Module dependencies.
  */
-// Server logic is imported into the app
-// requires importing code from another file
-const app = require('../app');
-// An external dependency is being imported
-const debug = require('debug')('projnotes');
-// Module that allows communication with a client
-// by HTTP protocol
-const http = require('http');
+// Importing the server logic
+// require is used to import code from an external file 
+import app from '../app';
+// Importing an external dependecy
+import Debug from 'debug';
+const debug = Debug('projnotes')
+// Module that allows to communicate with a client
+// usign HTTP protocol
+import http from 'http';
 
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '3000');
-// Store the port info in the app 
+// Store the port info in the app
 app.set('port', port);
 
 /**
@@ -29,16 +30,16 @@ const server = http.createServer(app); // (req, res) => { acciones }
 /**
  * Listen on provided port, on all network interfaces.
  */
-
+// Specifying the port where the server will be listening
 server.listen(port);
-// Attaching Callbacks to events
+// Attaching Callbacks to events 
 server.on('error', onError);
 server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
  */
-// Specifying the port where the server will be listening
+
 function normalizePort(val) {
   const port = parseInt(val, 10);
 
@@ -71,11 +72,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -88,9 +89,9 @@ function onError(error) {
  */
 
 function onListening() {
-  let addr = server.address();
-  let bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug(`🤬 Listening on ${process.env.APP_URL}:${addr.port} 😁😁`);
+  const addr = server.address();
+  const bind = typeof addr === 'string'
+    ? `pipe ${addr}`
+    : `port ${addr.port}`;
+  debug(`⭐⭐ Listening on ${process.env.APP_URL}:${addr.port} ⭐⭐`);
 }
