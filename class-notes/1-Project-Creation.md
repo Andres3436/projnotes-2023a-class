@@ -1,9 +1,7 @@
 # Proyect Creation
-Class project from the FullStack Web Development
-Subject.
 
-## About..
-**Author:** [Andres Rodriguez]()
+## Introduction
+
 
 ---
 
