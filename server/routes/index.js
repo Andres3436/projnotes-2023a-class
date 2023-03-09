@@ -1,25 +1,25 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express';
+const { Router } = express;
+
+const router = Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  let iconSet = ["🤑","😎","🤬"];
-  let icon = iconSet [Math.floor(Math.random() * 3)]
-  console.log(`Icono: ${icon}`)
-  res.render('index', { title: 'DWPCII.2023A', icon });
+router.get('/', (req, res, next) => {
+  let iconSet = ["⭐","🤖","🍉"];
+  let icon = iconSet[Math.floor(Math.random() * 3)]
+  res.render('index', { title: 'DWPCII-2023A', icon });
 });
 
-router.get('/author', function(req, res){
-
+router.get('/author', (req, res) => {
+// Creating a View-Model
   let author = { 
   "name":"🙄Andres",
   "lastname": "Rodriguez Gaspar",
   "twitter": "@jesusomg",
   "job": "ITGAM",
 };
-
+// Sending the view-model to be rendered by a View
 res.render('author', author);
-
 });
 
-module.exports = router;
+export default router;

@@ -1,11 +1,12 @@
 // Importting Express library
-const express = require('express');
+import express from 'express';
+const { Router } = express;
 // Creating a Router Instace
 const router = express.Router();
 
 // Creating the router
-router.get('/author', function(req, res){
-
+router.get('/author', (req, res)=>{
+// Responding to the client using res object
  res.json({
     "name":"Jesus",
     "lastname": "Rodriguez",
@@ -15,4 +16,4 @@ router.get('/author', function(req, res){
 });  // function(req, res){}
 
 // Exporting the router
-module.exports = router;
+export default router;
