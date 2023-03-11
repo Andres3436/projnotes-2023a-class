@@ -32,5 +32,5 @@ export default router;
 ## Discussions
 Transpiling step and deleting might slow down your development environment. Plus, ES Modules, is almost coming to node. But, nevertheless, this is a good eductational material to understand how transipiling runs under the hood like when we are developing front-end apps.
 
-## Referencias
+## References
 1. https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/
