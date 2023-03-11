@@ -38,7 +38,7 @@ module.exports = {
 ## Discussions
 Adding Babel (ES6) to a legacy project being built with webpack
 
-## Referencias
+## Reference
 1. https://docplayer.es/20964588-Tema-1-lenguajes-de-programacion.html
 2. https://gist.github.com/wolever/5c9e6d27b146db225736
 
