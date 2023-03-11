@@ -5,21 +5,33 @@ Babel's code transformations are enabled by applying plugins (or presets) to you
 
 ## Methods
 Plugin Ordering
+
 Ordering matters for each visitor in the plugin.
+
 This means if two transforms both visit the "Program" node, the transforms will run in either plugin or preset order.
+
 Plugins run before Presets.
+
 Plugin ordering is first to last.
+
 Preset ordering is reversed (last to first).
+
 For example:
+
 babel.config.json
 {
+
   "plugins": ["transform-decorators-legacy", "transform-class-properties"]
+  
 }
 
 ## Results
 babel.config.json
+
 {
+
   "plugins": ["babel-plugin-myPlugin", "@babel/plugin-transform-runtime"]
+  
 }
 
 ## Discussions
