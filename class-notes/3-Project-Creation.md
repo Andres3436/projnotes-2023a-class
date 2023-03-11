@@ -19,8 +19,8 @@ After having finished the configurations, we go up and left CLICK on MANUAL DEPL
 At this stage of the project, the details to configure each of the Settings concept tabs is very important, since it depends on that that the page that is being created is shown without errors.
 
 ## Reference
-1.	(https://www.autentia.com/wp-content/uploads/libros/Back_IntroduccionAlBack-Autentia.pdf)
-2.	(https://kinsta.com/es/blog/directorio-sitio-web/)
+1.	https://www.autentia.com/wp-content/uploads/libros/Back_IntroduccionAlBack-Autentia.pdf
+2.	https://kinsta.com/es/blog/directorio-sitio-web/
 
 
 
