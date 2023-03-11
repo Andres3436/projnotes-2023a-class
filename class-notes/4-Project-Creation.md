@@ -1,7 +1,7 @@
 # Adding Babel
 
 ## Introduction
-In the beginning, languages were designed only to be able to execute programs efficiently. The first languages that are still used have periodic revisions to reflect influences from other areas of computing. Languages such as Java, C++ and ML reflect a wealth of experience gained in the design and use of the hundreds of ancient languages.
+At first, languages were designed solely to be able to run programs efficiently. Early languages still in use have periodic revisions to reflect influences from other areas of computing. Languages like Java, C++, and ML reflect a wealth of experience gained from designing and using hundreds of older languages.
 
 ## Methods
 1.	Install babel (and eslint):
