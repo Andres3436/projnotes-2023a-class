@@ -6,27 +6,44 @@ ES6, released in 2015, added many powerful new features to the language. In this
 
 ## Methods
 Changed was VAR to CONST. The CONST function: This declaration creates a constant whose scope can be global or local to the block in which it is declared.
+
 Changed to FUNCTION but here the appropriate thing is to put this "=>". A function is a block of code that performs some operation.
+
 change was the LET part, it was written where they are within the functions or the parentheses like these “{ }”. The LET function assigns names to the results of calculations.
+
 the EXPORT DEFAULT ROUTER. is a common practice in JavaScript, to create modules that export a single value.
 
 ## Results
 Code for bin/www.js:
+
 // bin/www.js
+
 /**
+
  * Module dependencies.
+ 
  */
+ 
 import app from '../app';
+
 import debugLib from 'debug';
+
 import http from 'http';
+
 const debug = debugLib('your-project-name:server');
+
 // ..generated code below.
 
 Code for routes/index.js and routes/users.js:
+
 // routes/index.js and users.js
+
 import express from 'express';
+
 var router = express.Router();
+
 // ..stuff below
+
 export default router;
 
 ## Discussions
