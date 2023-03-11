@@ -13,5 +13,5 @@ After following the steps of the described method, the result will be to show al
 Continuing with the sequence of following the steps to access all the repositories is in a friendly and orderly way, with minimal access errors..
 
 ## Reference
-1. (https://76440proyecto.webnode.es/modulo-6/articulos/a6-9-creacion-de-un-repositorio-digital/#:~:text=Un%20repositorio%20es%20un%20conjunto,de%20una%20unidad%20de%20informaci%C3%B3n.)
+1. https://76440proyecto.webnode.es/modulo-6/articulos/a6-9-creacion-de-un-repositorio-digital/#:~:text=Un%20repositorio%20es%20un%20conjunto,de%20una%20unidad%20de%20informaci%C3%B3n.
 
