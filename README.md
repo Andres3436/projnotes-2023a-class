@@ -13,3 +13,9 @@ This Project will be developed using ECMAScript 6 (ES6) and run on a Node.js run
 ## Project Notes
 1. [Project Creation](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/1-Project-Creation.md)
 2. [Repository Creation](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/2-Project-Creation.md)
+3. [Creating dedicated Backend directory]
+4. [Adding Babel]
+5. [Updating to ES6]
+6. [Build Script]
+7. [Babel plugins]
+8. [Adding a bundler]
