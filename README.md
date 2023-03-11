@@ -18,4 +18,4 @@ This Project will be developed using ECMAScript 6 (ES6) and run on a Node.js run
 5. [Updating to ES6](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/5-Project-Creation.md)
 6. [Build Script](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/6-Project-Creation.md)
 7. [Babel plugins](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/7-Project-Creation.md)
-8. [Adding a bundler]
+8. [Adding a bundler](https://github.com/Andres3436/projnotes-2023a-class/blob/main/class-notes/8-Project-Creation.md)
