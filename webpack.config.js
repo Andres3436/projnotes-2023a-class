@@ -9,14 +9,14 @@ const path = require('path');
 // that will be used by webpack
 module.exports = {
   ...
-  output: {
+  output= {
     // 2.1 Absolute output path
     // Note that it is being placed in the directory
     // of the project's static files
-    path: path.resolve(__dirname, "public");
+    path: path.resolve(__dirname, "public"),
     // 2.2 Output file name
     filename: "bundle.js"
-  };
+  },
   // Adding a module to webpack
   module: {
     rules: [
@@ -47,3 +47,4 @@ module.exports = {
       }
     ]
   }
+}
