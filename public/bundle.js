@@ -1,1 +1,1 @@
-console.log("🎉 Client Server working powered by Webpackpack 🎉"),((e="No message given")=>{console.log(e)})(),async function(){console.log("Calling");const e=await new Promise((e=>{setTimeout((()=>{e("resolved")}),2e3)}));console.log(e)}();
+(()=>{"use strict";console.log("🎉 Estilos cargados correctamente 🎉"),((o="No message given")=>{console.log(o)})(),async function(){console.log("Calling");const o=await new Promise((o=>{setTimeout((()=>{o("resolved")}),2e3)}));console.log(o)}()})();
