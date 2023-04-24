@@ -17,13 +17,13 @@ import apiRouter from '@server/routes/api';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
+// Impornting winston logger
+import winston from './config/winston';
 
 // Importin webpack configuration
 import webpackConfig from '../webpack.dev.config';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
-// Impornting winston logger
-import winston from './config/winston';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
