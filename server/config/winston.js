@@ -37,7 +37,7 @@ const myConsoleFormat = combine(
   // Función de impreson
   printf(
     (info) => `${info.level}: ${info.label}: ${info.timestamp}: ${info.message}`
-  ),
+  )
 );
 
 // Formato para los archivos
@@ -47,7 +47,7 @@ const myFileFormat = combine(
   // Agregando fecha
   timestamp({ format: 'DD-MM-YYYY HH:mm:ss' }),
   // Estableciendo la salida en formato Json
-  format.json(),
+  format.json()
 );
 
 // Creando el objeto de opciones para cada transporte
