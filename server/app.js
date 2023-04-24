@@ -7,7 +7,7 @@ import path from 'path';
 // Helps to parse client cookies
 import cookieParser from 'cookie-parser';
 // Library to log http communication
-import log from 'morgan';
+import morgan from 'morgan';
 
 import indexRouter from '@server/routes/index';
 import usersRouter from '@server/routes/users';
@@ -17,8 +17,11 @@ import apiRouter from '@server/routes/api';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
+// Importing webpack configuration
+import webpackConfig from '../webpack.dev.config';
+
 // Impornting winston logger
-import winston from './config/winston';
+import log from './config/winston';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -52,7 +55,7 @@ if (nodeEnviroment === 'development') {
     })
   );
   // Enabling the webpack HMR
-  app.use(WebpackHotMiddleware(bundle));
+  app.use(WebpackHotMiddleware);
 } else {
   console.log('🐱‍👤Ejecutando en modo produccion');
 }
@@ -60,12 +63,12 @@ if (nodeEnviroment === 'development') {
 // view engine setup
 // We are delcaring the localization of the views
 app.set('views', path.join(__dirname, 'views'));
-// Setting up
+// Setting up the template engine
 app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received request
-app.use(log('combined', { stream: winston.stream }));
+app.use(morgan('combined', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode the url info

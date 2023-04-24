@@ -15,6 +15,6 @@
     "__rootdir": "readonly"
 },
 "settings": {
-  "import/resolver" : {"babel-module": {}}
+  "import/resolver" : { "babel-module" : {}}
 }
 }
