@@ -19,6 +19,8 @@ import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 // Importin webpack configuration
 import webpackConfig from '../webpack.dev.config';
+// Impornting winston logger
+import winston from './config/winston';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -32,7 +34,7 @@ const nodeEnviroment = process.env.NODE_ENV || 'production';
 
 // Deciding if we add webpack middleware or not
 if (nodeEnviroment === 'development') {
-  // Start Webpack dev server
+  // Start Webpack dev server/workspaces/projnotes-2023a-class/server/logs
   console.log('🦿Ejecutando en modo desarrollo');
   // Adding the key "mode" with its value "development"
   webpackConfig.mode = nodeEnviroment;
@@ -65,7 +67,7 @@ app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received request
-app.use(morgan('dev'));
+app.use(morgan('combined', { stream: winston.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode the url info
