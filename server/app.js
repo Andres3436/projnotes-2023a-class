@@ -18,9 +18,11 @@ import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 // Importin webpack configuration
+// Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
+
 // Impornting winston logger
-import winston from './config/winston';
+import log from './config/winston';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
@@ -34,7 +36,7 @@ const nodeEnviroment = process.env.NODE_ENV || 'production';
 
 // Deciding if we add webpack middleware or not
 if (nodeEnviroment === 'development') {
-  // Start Webpack dev server/workspaces/projnotes-2023a-class/server/logs
+  // Start Webpack dev server
   console.log('🦿Ejecutando en modo desarrollo');
   // Adding the key "mode" with its value "development"
   webpackConfig.mode = nodeEnviroment;
@@ -54,7 +56,7 @@ if (nodeEnviroment === 'development') {
     })
   );
   // Enabling the webpack HMR
-  app.use(WebpackHotMiddleware(bundler));
+  app.use(WebpackHotMiddleware);
 } else {
   console.log('🐱‍👤Ejecutando en modo produccion');
 }
@@ -62,12 +64,12 @@ if (nodeEnviroment === 'development') {
 // view engine setup
 // We are delcaring the localization of the views
 app.set('views', path.join(__dirname, 'views'));
-// Setting up
+// Setting up the template engine
 app.set('view engine', 'hbs');
 
 // Registering middlewares
 // Log all received request
-app.use(morgan('combined', { stream: winston.stream }));
+app.use(morgan('combined', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
 // Decode the url info
@@ -84,6 +86,7 @@ app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
+  log.info(`404 Pagina no encontrada ${req.method} ${req.originalUrl}`);
   next(createError(404));
 });
 
@@ -95,6 +98,7 @@ app.use((err, req, res) => {
 
   // render the error page
   res.status(err.status || 500);
+  log.error(`${err.status || 500} - ${err.message}`);
   res.render('error');
 });
 

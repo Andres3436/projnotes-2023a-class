@@ -11,11 +11,11 @@
     "es6": true,
     "node": true,
     "browser": true
-  },
-"settings":{
-  "import/resolver":{"babel-module" : {}}
+  }, 
+  "globals": {
+    "__rootdir": "readonly"
 },
-"globals": {
-  "__rootdir": "readonly"
+"settings": {
+  "import/resolver" : { "babel-module" : {}}
 }
 }
