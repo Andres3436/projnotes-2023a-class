@@ -17,9 +17,11 @@ import apiRouter from '@server/routes/api';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
-// Importin webpack configuration
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
+
+// Importando el configurador del motor de plantillas
+import configTemplateEngine from './config/templateEngine';
 
 // Impornting winston logger
 import log from './config/winston';
@@ -61,11 +63,8 @@ if (nodeEnviroment === 'development') {
   console.log('🐱‍👤Ejecutando en modo produccion');
 }
 
-// view engine setup
-// We are delcaring the localization of the views
-app.set('views', path.join(__dirname, 'views'));
-// Setting up the template engine
-app.set('view engine', 'hbs');
+// 👁 view engine setup 👁
+configTemplateEngine(app);
 
 // Registering middlewares
 // Log all received request
