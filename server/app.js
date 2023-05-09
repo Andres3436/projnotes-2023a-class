@@ -45,10 +45,13 @@ if (nodeEnviroment === 'development') {
   webpackConfig.devServer.port = process.env.PORT;
   // Setting up the HMR (Hot Module Replacement)
   webpackConfig.entry = [
-    'webpack-hot-middleware/client?reload=true&timeout=1000',
+    'webpack-hot-middPleware/client?reload=true&timeout=1000',
     webpackConfig.entry,
   ];
-  // Cretaing the bundler
+  // Agregar el plugin a la configuración de desarrollo
+  // de webpack
+  webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+  // Creating the bundler
   const bundler = webpack(webpackConfig);
   // Enabling the webpack middleware
   app.use(
