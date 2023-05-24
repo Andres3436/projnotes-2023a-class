@@ -14,7 +14,7 @@ const addRoutes = (app) => {
   // Agregar el enrutado de user
   app.use('/user', userRouter);
   // Agregar el enrutado de about
-  app.about('/about', aboutRouter);
+  app.use('/about', aboutRouter);
   // Agregar el enrutado de action
   app.action('/action', actionRouter);
   return app;
