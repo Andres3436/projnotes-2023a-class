@@ -1,11 +1,35 @@
 // Actions methods
 // GET "/project"
+import log from '../../config/winston';
+
 const showDashboard = (req, res) => {
-    res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
-  };
-  
-  // POST "/project/add"
+  res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
+};
+
+// GET "/project/add"
+const add = (req, res) => {
+  res.render('project/addView');
+};
+
+// POST "/project/add"
 const addPost = (req, res) => {
+  // Rescatando la info del formulario
+  // Rescatando la info del formulario
+  const { errorData: validationError } = req;
+  // En caso de haber error
+  // se le informa al cliente
+  if (validationError) {
+    log.info('Se entrega al cliente error de validación de add Project');
+    res.status(422).json(validationError);
+  } else {
+    // En caso de que pase la validación
+    // Se desestructura la información
+    // de la peticion
+    const { validData: project } = req;
+    // Se contesta la información
+    // del proyecto al cliente
+    res.status(200).json(project);
+  }
   // Extrayendo la informacion
   // del formulario
   const { name, description } = req.body;
@@ -16,11 +40,10 @@ const addPost = (req, res) => {
   });
 };
 
-  // Controlador user
-  export default {
-    // Action Methods
-    showDashboard,
-    add,
-    addPost,
-  };
-  
+// Controlador user
+export default {
+  // Action Methods
+  showDashboard,
+  add,
+  addPost,
+};
