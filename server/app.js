@@ -2,6 +2,8 @@
 import createError from 'http-errors';
 // Import the Express Library
 import express from 'express';
+// Enable post and delete verbs
+import methodOverride from 'method-override';
 // Is a Core-Node library to manage system paths
 import path from 'path';
 // Helps to parse client cookies
@@ -27,7 +29,7 @@ import router from './router';
 
 // Creando variable del directorio raiz
 // eslint-disable-next-line
-global["__rootdir"] = path.resolve(process.cwd());
+global['__rootdir'] = path.resolve(process.cwd());
 
 // We are creating the express instance
 const app = express();
@@ -38,46 +40,48 @@ const nodeEnviroment = process.env.NODE_ENV || 'production';
 // Deciding if we add webpack middleware or not
 if (nodeEnviroment === 'development') {
   // Start Webpack dev server
-  console.log('🦿Ejecutando en modo desarrollo');
+  console.log('🛠️  Ejecutando en modo desarrollo');
   // Adding the key "mode" with its value "development"
   webpackConfig.mode = nodeEnviroment;
   // Setting the port
   webpackConfig.devServer.port = process.env.PORT;
   // Setting up the HMR (Hot Module Replacement)
   webpackConfig.entry = [
-    'webpack-hot-middPleware/client?reload=true&timeout=1000',
+    'webpack-hot-middleware/client?reload=true&timeout=1000',
     webpackConfig.entry,
   ];
   // Agregar el plugin a la configuración de desarrollo
   // de webpack
   webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   // Creating the bundler
-  const bundler = webpack(webpackConfig);
+  const bundle = webpack(webpackConfig);
   // Enabling the webpack middleware
   app.use(
-    WebpackDevMiddleware(bundler, {
+    WebpackDevMiddleware(bundle, {
       publicPath: webpackConfig.output.publicPath,
     })
   );
-  // Enabling the webpack HMR
-  app.use(WebpackHotMiddleware);
+  //  Enabling the webpack HMR
+  app.use(WebpackHotMiddleware(bundle));
 } else {
-  console.log('🐱‍👤Ejecutando en modo produccion');
+  console.log('🏭 Ejecutando en modo producción 🏭');
 }
 
-// 👁 view engine setup 👁
+// Configuring the template engine
 configTemplateEngine(app);
 
 // Registering middlewares
-// Log all received request
-app.use(morgan('combined', { stream: log.stream }));
+// Log all received requests
+app.use(morgan('dev', { stream: log.stream }));
 // Parse request data into json
 app.use(express.json());
-// Decode the url info
+// Decode url info
 app.use(express.urlencoded({ extended: false }));
 // Parse client cookies into json
 app.use(cookieParser());
-// Set up static file server
+// Enable post and delete verbs
+app.use(methodOverride('_method'));
+// Set up the static file server
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Registering routes
